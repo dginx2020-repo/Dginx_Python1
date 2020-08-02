@@ -25,7 +25,18 @@ while chances >=0:
                 if restart in ('n', 'N', 'No', 'NO', 'no'):
                     print('Thank you Mr. ', cname, 'Have a great Day')
                     break
-                elif option == 2:
+            elif option == 2:
+                    newpin = int(input('Please enter your new PIN '))
+                    confpin = int(input('Please conform your new PIN '))
+                    if newpin == confpin:
+                        pin = newpin
+
+                    else:
+                        print('Pin did not matched Try later')
+                        break
+
+
+
 
 
 
