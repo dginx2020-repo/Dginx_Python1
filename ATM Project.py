@@ -21,6 +21,12 @@ while chances >=0:
             option = int(input('Please Select your option '))
             if option == 1:
                 print('Mr', cname, 'your Balance is $', balance)
+                restart = input("Would you like to go back?")
+                if restart in ('n', 'N', 'No', 'NO', 'no'):
+                    print('Thank you Mr. ', cname, 'Have a great Day')
+                    break
+                elif option == 2:
+
 
 
 
