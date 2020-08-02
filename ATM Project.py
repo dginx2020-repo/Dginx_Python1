@@ -60,8 +60,7 @@ while chances >=0:
                         break
 # withdraw
             elif option == 5:
-                option5 = ('y')
-                withdraw = int(input("Enter the amount you want to withdraw: \n", '$10', '$20', '$50', '$100'))
+                withdraw = int(input('Enter the amount you want to withdraw: \n' '$10 $20 $50 $100 \n'))
                 if withdraw in (10, 20, 50, 100):
                     balance = balance - withdraw
                     print('\n Your new Balance is $', balance)
@@ -71,9 +70,14 @@ while chances >=0:
                         break
                 elif withdraw not in (10, 20, 50, 100):
                     print('Invalid Entry Try again')
-                    restart = ('y')
-                elif withdraw ==1:
-                    withdraw = int(input("Enter the amount you want to withdraw: \n", '$10', '$20', '$50', '$100'))
+    elif pin != (1989):
+        print('Incorrect PIN')
+        chances = chances-1
+        if chances ==0:
+            print('\n No more attempt left \n' 'Card had been Blocked Please visit your nearest branch \n' 'Thank you!!!')
+            break
+
+
 
 
 
