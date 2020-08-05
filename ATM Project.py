@@ -92,6 +92,7 @@ while chances >=0:
                         print('\n Your new Balance is $', balance)
                         restart = input("Would you like to go back ? ")
                         if restart in ('n', 'N', 'No', 'NO', 'no'):
+                            chances = -1
                             print('Thank you Mr. ', cname, 'Have a great Day')
                     elif withdraw not in [10, 20, 50, 100]:
                         print('Transaction Timeout \n' 'Thank you for Banking with us\n')
