@@ -52,6 +52,7 @@ while chances >=0:
                 print('your new balance is $', float(balance))
                 restart = input("Would you like to go back ?")
                 if restart in ('n', 'N', 'No', 'NO', 'no'):
+                    chances = -1
                     print('Thank you Mr. ', cname, 'Have a great Day')
                     break
 # Bill Pay
@@ -63,8 +64,11 @@ while chances >=0:
                     balance = balance-billpay
                     print('Transaction of $', float(billpay), 'is successful\n')
                     print('Your available balance is $ ', balance)
+                elif billconform in ('N', 'n'):
+                    print('Transaction has been cancelled\n')
                     restart = input("Would you like to go back ? ")
                     if restart in ('n', 'N', 'No', 'NO', 'no'):
+                        chances = -1
                         print('Thank you Mr. ', cname, 'Have a great Day')
                         break
 # withdraw
