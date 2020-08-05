@@ -98,7 +98,6 @@ while chances >=0:
                         chances = -1
                         break
 
-
     elif pin != (1989):
         print('Incorrect PIN')
         chances = chances-1
