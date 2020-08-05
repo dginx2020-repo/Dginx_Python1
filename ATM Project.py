@@ -1,9 +1,9 @@
 print('Welcome to Dginx Bank')
 cname = input('Enter your Name ')
-print('Hello Mr', cname)
+print('Hello ', cname)
 
 # variable Declaration
-restart=('y')
+restart=('Y')
 chances = 3
 balance = 100000.86
 
@@ -24,6 +24,7 @@ while chances >=0:
                 print('Mr', cname, 'your Balance is $', balance)
                 restart = input("Would you like to go back?")
                 if restart in ('n', 'N', 'No', 'NO', 'no'):
+                    chances = -1
                     print('Thank you Mr. ', cname, 'Have a great Day')
                     break
 # PIN Change
@@ -32,9 +33,17 @@ while chances >=0:
                     confpin = int(input('Please conform your new PIN '))
                     if newpin == confpin:
                         pin = newpin
+                        print('PIN has been changed successfully\n')
+                        restart = input("Would you like to go back?")
+                        if restart in ('n', 'N', 'No', 'NO', 'no'):
+                            chances = -1
+                            print('Thank you Mr. ', cname, 'Have a great Day')
+                            break
 
                     else:
                         print('Pin did not matched Try later')
+                        chances = -1
+                        print('Thank you Mr. ', cname, 'Have a great Day')
                         break
 # Pay In
             elif option == 3:
@@ -60,16 +69,27 @@ while chances >=0:
                         break
 # withdraw
             elif option == 5:
+
                 withdraw = int(input('Enter the amount you want to withdraw: \n' '$10 $20 $50 $100 \n'))
-                if withdraw in (10, 20, 50, 100):
+                if withdraw in [10, 20, 50, 100]:
                     balance = balance - withdraw
                     print('\n Your new Balance is $', balance)
                     restart = input("Would you like to go back ? ")
                     if restart in ('n', 'N', 'No', 'NO', 'no'):
                         print('Thank you Mr. ', cname, 'Have a great Day')
-                        break
-                elif withdraw not in (10, 20, 50, 100):
+
+                elif withdraw != [10, 20, 50, 100]:
                     print('Invalid Entry Try again')
+                    withdraw = int(input('Enter the amount you want to withdraw: \n' '$10 $20 $50 $100 \n '))
+                    if withdraw in [10, 20, 50, 100]:
+                        balance = balance - withdraw
+                        print('\n Your new Balance is $', balance)
+                        restart = input("Would you like to go back ? ")
+                        if restart in ('n', 'N', 'No', 'NO', 'no'):
+                            print('Thank you Mr. ', cname, 'Have a great Day')
+                    break
+
+
     elif pin != (1989):
         print('Incorrect PIN')
         chances = chances-1
