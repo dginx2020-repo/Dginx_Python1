@@ -6,6 +6,7 @@ print('Hello ', cname)
 restart=('Y')
 chances = 3
 balance = 100000.86
+wdchance = 2
 
 # PIN Validation
 while chances >=0:
@@ -73,14 +74,15 @@ while chances >=0:
                         break
 # withdraw
             elif option == 5:
-
                 withdraw = int(input('Enter the amount you want to withdraw: \n' '$10 $20 $50 $100 \n'))
                 if withdraw in [10, 20, 50, 100]:
-                    balance = balance - withdraw
-                    print('\n Your new Balance is $', balance)
-                    restart = input("Would you like to go back ? ")
-                    if restart in ('n', 'N', 'No', 'NO', 'no'):
-                        print('Thank you Mr. ', cname, 'Have a great Day')
+                   balance = balance - withdraw
+                   print('\n Your new Balance is $', balance)
+                   restart = input("Would you like to go back ? ")
+                   if restart in ('n', 'N', 'No', 'NO', 'no'):
+                    chances = -1
+                    print('Thank you Mr. ', cname, 'Have a great Day')
+                    break
 
                 elif withdraw != [10, 20, 50, 100]:
                     print('Invalid Entry Try again')
@@ -91,7 +93,10 @@ while chances >=0:
                         restart = input("Would you like to go back ? ")
                         if restart in ('n', 'N', 'No', 'NO', 'no'):
                             print('Thank you Mr. ', cname, 'Have a great Day')
-                    break
+                    elif withdraw not in [10, 20, 50, 100]:
+                        print('Transaction Timeout \n' 'Thank you for Banking with us\n')
+                        chances = -1
+                        break
 
 
     elif pin != (1989):
